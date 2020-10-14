@@ -28,7 +28,7 @@ const projects = [
     id: 3,
     title: 'Aerity',
     desc:
-      'Weather information app powered by DarkSky and OpenWeather. The backend is an Express server wrapped in a netlify serverless function. Supports requests by location name or geographic coordinates Frontend built with React and Grommet.',
+      'Weather information app powered by DarkSky and OpenWeather. The backend is an Express server wrapped in a netlify serverless function. Supports requests by location name or geographic coordinates. Frontend built with React and Grommet.',
     url: 'https://aerity.netlify.app/',
     img: [
       require('./assets/media/aerity768w.png'),
