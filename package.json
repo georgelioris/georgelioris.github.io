@@ -18,13 +18,12 @@
     "slugify": "^1.4.5"
   },
   "scripts": {
-    "predeploy": "yarn run build --environment GH_PAGES && rsync -av --exclude={'*.html','build','*.md','.*'} public/ markdown/  ghbuild",
     "start": "yarn run watch:css && react-scripts start",
     "build": "yarn run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css -w",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
