@@ -9,7 +9,8 @@ const projects = [
       require('./assets/media/zstore768w.png'),
       require('./assets/media/zstore768w2.png')
     ],
-    tech: ['react', 'redux', 'jest']
+    tech: ['react', 'redux', 'jest'],
+    sources: ['https://github.com/georgelioris/zerostore']
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const projects = [
       require('./assets/media/algovis768w.png'),
       require('./assets/media/algovis768w2.png')
     ],
-    tech: ['react', 'sorting algorithms']
+    tech: ['react', 'sorting algorithms'],
+    sources: ['https://github.com/georgelioris/algovis']
   },
   {
     id: 3,
@@ -32,7 +34,11 @@ const projects = [
       require('./assets/media/aerity768w.png'),
       require('./assets/media/aerity768w2.png')
     ],
-    tech: ['react', 'rest-api', 'express', 'serverless']
+    tech: ['react', 'rest-api', 'express', 'serverless'],
+    sources: [
+      'https://github.com/georgelioris/aerity-client',
+      'https://github.com/georgelioris/aerity-server'
+    ]
   }
 ];
 

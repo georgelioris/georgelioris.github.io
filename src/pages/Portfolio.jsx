@@ -2,8 +2,9 @@ import React from 'react';
 import Section from '../components/Section';
 import projects from '../projects';
 import Slider from '../components/Slider';
+import { External } from '../components/Icons';
 
-const CardImage = ({ id, title, desc, img, tech, url }) => {
+const CardImage = ({ id, title, desc, img, tech, url, sources }) => {
   return (
     <div className="mx-auto  mb-12 flex flex-col justify-start justify-items-center">
       <div className="card-label">
@@ -24,6 +25,23 @@ const CardImage = ({ id, title, desc, img, tech, url }) => {
                 style={idx === 0 ? { listStyle: 'none' } : {}}
               >
                 {item}
+              </li>
+            ))}
+          </ul>
+          <ul className="text-purple-700 text-sm font-medium mt-2">
+            {sources.map((source) => (
+              <li key={source}>
+                <a
+                  href={source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-row"
+                >
+                  {source.replace(/https:\/\//g, '')}
+                  <span>
+                    <External />
+                  </span>
+                </a>
               </li>
             ))}
           </ul>
