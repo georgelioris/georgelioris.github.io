@@ -1,3 +1,3 @@
 ## Personal page
 
-Deployed at [here](http://georgelioris.github.io/)
+Deployed [here](http://georgelioris.github.io/)
