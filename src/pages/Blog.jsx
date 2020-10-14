@@ -9,7 +9,7 @@ const Blog = () => {
 
   return (
     <Section className="p-5">
-      <div className="flex-row flex justify-start mx-auto py-5 mb-12">
+      <div className="flex-row flex justify-start mx-auto mb-12">
         <img
           src={require('../assets/media/avatar.jpg')}
           alt="george lioris"
