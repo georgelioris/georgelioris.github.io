@@ -1,0 +1,196 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer components {
+  body {
+    background: white;
+  }
+
+  .menu-btn {
+    @apply p-2 rounded-sm  border border-solid border-purple-200 bg-purple-100;
+    @media screen and (min-width: 768px) {
+      @apply hidden;
+    }
+  }
+
+  .card-label {
+    @apply box-border  w-full  flex flex-row justify-self-center p-4;
+  }
+
+  .nav-hidden {
+    @apply font-semibold pl-2 text-lg bg-purple-100 border border-solid border-purple-200;
+  }
+
+  .slide {
+    @media screen and (min-width: 768px) {
+      width: 768px;
+      height: 568px;
+    }
+    @media screen and (max-width: 767px) {
+      height: calc(100vw * 0.73);
+      width: 100vw;
+    }
+  }
+
+  pre,
+  code,
+  blockquote {
+    background: #f2f2f2;
+  }
+
+  blockquote {
+    @apply p-4;
+    border-left: 6px solid #ccc;
+    margin-bottom: 1.75rem;
+
+    p {
+      @apply mb-0;
+    }
+  }
+
+  .markdown {
+    @apply text-black font-serif font-normal my-0 mx-auto max-w-3xl;
+    padding: 2.625rem 1.3125rem;
+    line-height: 1.75;
+    box-sizing: border-box;
+    font-kerning: normal;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-rendering: optimizeLegibility;
+    }
+
+    h1,
+    h2,
+    h3 {
+      @apply pb-2;
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.5rem;
+    }
+
+    h1 {
+      @apply mt-0 text-5xl;
+      text-align: center;
+    }
+
+    h2 {
+      @apply text-4xl;
+    }
+
+    h3 {
+      @apply font-black text-3xl;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+
+    h5 {
+      @apply text-xl;
+    }
+
+    h6 {
+      @apply text-sm;
+    }
+
+    h1,
+    h2 {
+      @apply font-black font-sans;
+      line-height: 1.1;
+    }
+
+    h3,
+    h4 {
+      margin: 1.414rem 0 0.5rem;
+      font-weight: inherit;
+      line-height: 1.5;
+    }
+
+    small {
+      @apply text-xs;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited a:focus a:active a:hover {
+      color: #3498db;
+    }
+
+    img {
+      max-width: calc(100% + 2.625rem);
+      display: block;
+      margin: 0 -1.3125rem 1.75rem -1.3125rem;
+    }
+
+    p {
+      margin: 0 0 1.75rem 0;
+      line-height: 1.75;
+    }
+
+    label {
+      display: block;
+    }
+
+    pre,
+    code {
+      @apply font-mono;
+      line-height: 1.5;
+      hyphens: none;
+    }
+
+    hr {
+      height: 0.125rem;
+      border: none;
+      margin-bottom: 1.75rem;
+    }
+
+    pre {
+      border-radius: 0.625rem;
+      padding: 1.3125rem;
+      overflow-x: auto;
+      margin: 0 -1.3125rem 1.75rem -1.3125rem;
+      border-radius: 0.625rem;
+    }
+
+    canvas,
+    video,
+    svg,
+    select,
+    textarea {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 49rem) {
+      pre,
+      img {
+        border-radius: 0;
+      }
+    }
+
+    @media print {
+      *,
+      *:before,
+      *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+    }
+  }
+}
