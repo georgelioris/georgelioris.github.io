@@ -28,8 +28,6 @@ const Article = ({ post: { date, url } }) => {
       .catch(() => {
         set(setError(true));
       });
-
-    console.log(error);
     if (state)
       document
         .getElementsByTagName('h2')[0]
