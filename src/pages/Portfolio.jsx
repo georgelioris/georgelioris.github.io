@@ -57,7 +57,7 @@ const CardImage = ({ id, title, desc, img, tech, url, sources }) => {
 
 const Portfolio = () => {
   return (
-    <Section>
+    <Section className="pb-1">
       {projects.map((project) => (
         <div className="md:mx-auto" key={project.id}>
           <CardImage {...project} />
