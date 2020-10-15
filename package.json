@@ -24,7 +24,7 @@
     "eject": "react-scripts eject",
     "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
     "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css -w",
-    "predeploy": "yarn run build",
+    "predeploy": "yarn run build && cp ./404.html ./build/404.html",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
