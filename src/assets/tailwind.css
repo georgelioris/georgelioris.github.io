@@ -17,7 +17,7 @@
   }
 
   .card-label {
-    @apply box-border  w-full  flex flex-row justify-self-center p-4;
+    @apply box-border  w-full  flex flex-row justify-self-center p-5;
   }
 
   .nav-hidden {
