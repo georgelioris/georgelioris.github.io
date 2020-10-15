@@ -16,7 +16,7 @@ const Blog = () => {
           className="rounded-full my-auto flex-col justify-self-center"
           style={{ width: '56px', height: '56px' }}
         />
-        <p className="font-serif text-gray-700  py-4 flex-col ml-5">
+        <p className="font-serif text-black py-4 flex-col ml-5">
           Random thoughts about programming and technology.
         </p>
       </div>
@@ -27,10 +27,10 @@ const Blog = () => {
               {post.title}
             </Link>
           </div>
-          <div className="row font-serif text-xs text-gray-800">
+          <div className="row font-serif text-sm text-black">
             <span>{post.date}</span>
           </div>
-          <div className="row font-serif leading-relaxed text-gray-800">
+          <div className="row font-serif leading-relaxed text-black">
             <span>{post.summary}</span>
           </div>
         </div>
