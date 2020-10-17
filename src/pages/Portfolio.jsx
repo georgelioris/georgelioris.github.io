@@ -45,7 +45,7 @@ const CardImage = ({ id, title, desc, img, tech, url, sources }) => {
               </li>
             ))}
           </ul>
-          <p className="mt-2 text-m text-gray-600 flex-row font-medium">
+          <p className="mt-5 text-m text-gray-800 flex-row font-medium">
             {desc}
           </p>
         </div>
