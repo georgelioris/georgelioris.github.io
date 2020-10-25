@@ -3,8 +3,18 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
 import axios from 'axios';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import PlaceHolder from './PlaceHolder';
 import { ArrowBack } from './Icons';
+
+const renderers = {
+  code: ({ language, value }) => (
+    <SyntaxHighlighter language={language} style={vscDarkPlus}>
+      {value}
+    </SyntaxHighlighter>
+  )
+};
 
 const Article = ({ post: { date, url } }) => {
   const [state, setState] = useState('');
@@ -36,7 +46,7 @@ const Article = ({ post: { date, url } }) => {
       const el = document.getElementById('date');
       if (el) el.remove();
     };
-  }, [state, date, url, error]);
+  }, [state, date, url]);
 
   return (
     <div className="markdown">
@@ -56,6 +66,7 @@ const Article = ({ post: { date, url } }) => {
             item && (
               <animated.div style={props} key={key}>
                 <ReactMarkdown
+                  renderers={renderers}
                   source={state}
                   transformImageUri={(uri) =>
                     uri.replace(/\./, process.env.REACT_APP_MARKDOWN)
