@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
@@ -27,6 +27,7 @@ const renderers = {
 
 const Article = ({ post: { date, url } }) => {
   const [state, setState] = useState('');
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const [show, set] = useState(false);
@@ -37,16 +38,22 @@ const Article = ({ post: { date, url } }) => {
   });
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => response.data)
-      .then((data) => {
+    (async () => {
+      setError(false);
+      setLoading(true);
+      try {
+        const result = await axios(url);
         set(true);
-        setState(data);
-      })
-      .catch(() => {
-        set(setError(true));
-      });
+        setState(result.data);
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [url]);
+
+  useLayoutEffect(() => {
     if (state)
       document
         .getElementsByTagName('h2')[0]
@@ -55,7 +62,7 @@ const Article = ({ post: { date, url } }) => {
       const el = document.getElementById('date');
       if (el) el.remove();
     };
-  }, [state, date, url]);
+  }, [date, state]);
 
   return (
     <div className="markdown">
@@ -67,9 +74,8 @@ const Article = ({ post: { date, url } }) => {
           <h3>woops! something went wrong</h3>
         </div>
       )}
-      {!state && !error && <PlaceHolder />}
-      {!error &&
-        state &&
+      {loading && <PlaceHolder />}
+      {state &&
         transitions.map(
           ({ item, key, props }) =>
             item && (
