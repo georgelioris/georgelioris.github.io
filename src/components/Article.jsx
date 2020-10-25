@@ -10,7 +10,16 @@ import { ArrowBack } from './Icons';
 
 const renderers = {
   code: ({ language, value }) => (
-    <SyntaxHighlighter language={language} style={vscDarkPlus}>
+    <SyntaxHighlighter
+      language={language}
+      style={vscDarkPlus}
+      customStyle={{
+        borderRadius: '0.625rem',
+        padding: '1.3125rem',
+        overflowX: 'auto',
+        margin: '0 -1.3125rem 1.75rem -1.3125rem'
+      }}
+    >
       {value}
     </SyntaxHighlighter>
   )
