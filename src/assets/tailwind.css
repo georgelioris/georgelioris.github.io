@@ -40,8 +40,19 @@
     background: #f2f2f2;
   }
 
+  blockquote code {
+    border: none;
+  }
+
+  code {
+    border: 1px solid #ccc;
+    border-radius: 0.125rem;
+    padding: 2px 4px;
+  }
+
   pre > code {
     background: none;
+    border: none;
   }
 
   blockquote {
