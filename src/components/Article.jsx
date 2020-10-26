@@ -44,7 +44,7 @@ const Article = ({ post: { date, url } }) => {
       try {
         const result = await axios(url);
         set(true);
-        setState(result.data);
+        setState(result.data.replace(/<br\/>/gi, '\n &nbsp;  '));
       } catch {
         setError(true);
       } finally {
