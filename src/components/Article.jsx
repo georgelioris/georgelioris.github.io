@@ -14,7 +14,7 @@ const renderers = {
       language={language}
       style={vscDarkPlus}
       customStyle={{
-        borderRadius: '0.625rem',
+        borderRadius: 'auto',
         padding: '1.3125rem',
         overflowX: 'auto',
         margin: '0 -1.3125rem 1.75rem -1.3125rem'
