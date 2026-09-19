@@ -5,7 +5,10 @@ theme = 'paper'
 
 [params]
   name = 'George Lioris'
-  bio = 'Random thoughts about programming and technology.'
+  bio = '''
+I write software, sometimes words.
+Mostly software.
+'''
   avatar = '/avatar.jpg'
   color = 'lotus'
   disableHLJS = true
