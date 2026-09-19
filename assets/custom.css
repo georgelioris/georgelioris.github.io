@@ -2,9 +2,92 @@
   --font-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !important;
   --font-serif: Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+  --fg: #545464;
+  --accent: #c84053;
+  --color-black: var(--fg);
+}
+
+:root.dark {
+  --bg: #181616 !important;
+  --fg: #c5c9c5;
+  --accent: #c4746e;
+  --color-black: #181616;
+  --color-white: var(--fg);
+}
+
+html {
+  background-color: var(--bg);
+}
+
+body {
+  background-color: transparent !important;
+}
+
+body::before,
+.nav-wrapper::before {
+  content: none !important;
+}
+
+.prose:not(#\#):not(#\#):not(#\#):not(#\#) {
+  --tw-prose-body: var(--fg);
+  --tw-prose-headings: var(--fg);
+  --tw-prose-lead: var(--fg);
+  --tw-prose-bold: var(--fg);
+  --tw-prose-counters: var(--fg);
+  --tw-prose-quotes: var(--fg);
+  --tw-prose-captions: var(--fg);
+  --tw-prose-code: var(--fg);
+  --tw-prose-kbd: var(--fg);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bullets: color-mix(in oklab, var(--fg) 40%, transparent);
+  --tw-prose-hr: color-mix(in oklab, var(--fg) 25%, transparent);
+  --tw-prose-quote-borders: color-mix(in oklab, var(--fg) 25%, transparent);
+  --tw-prose-th-borders: color-mix(in oklab, var(--fg) 25%, transparent);
+  --tw-prose-td-borders: color-mix(in oklab, var(--fg) 15%, transparent);
+}
+
+main section time,
+article > header div {
+  opacity: 0.9 !important;
+}
+
+main section h2,
+.link {
+  transition: color 200ms;
+}
+
+main section:hover h2,
+.link:hover {
+  color: var(--accent) !important;
+}
+
+.dark .btn-dark,
+.dark .nav-wrapper nav:has(> a[style*="--url"]) {
+  filter: none !important;
+}
+
+.btn-dark {
+  background: var(--fg) !important;
+  mask: url(./theme.svg) left center / cover no-repeat;
+}
+
+.dark .btn-dark {
+  mask-position: right center;
+}
+
+.nav-wrapper nav > a[style*="--url"] {
+  background: var(--fg) !important;
+  mask: var(--url) center center / cover no-repeat;
+}
+
+.dark .btn-menu::before,
+.dark .btn-menu::after {
+  background-color: var(--fg) !important;
+  filter: none !important;
 }
 
 header > div:first-child > a {
+  color: var(--fg) !important;
   font-weight: 900 !important;
 }
 
@@ -96,7 +179,7 @@ article code {
 }
 
 main .rounded-full > img {
-  scale: 1.3;
+  scale: 1.36;
 }
 
 .post-cover:not(#\#):not(#\#):not(#\#):not(#\#) {
@@ -117,7 +200,7 @@ main .rounded-full > img {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  mask-image: linear-gradient(to bottom, #000 25%, transparent);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent);
 }
 
 .post-cover-bg:not(#\#):not(#\#):not(#\#):not(#\#) img {
@@ -170,7 +253,7 @@ article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .highlight > div {
   }
 }
 
-.chroma { color: #d4d4d4 !important; background-color: #1e1e1e !important; }
+.chroma { color: #d4d4d4 !important; background-color: #282727 !important; }
 .chroma .err { color: #f44747; }
 .chroma .hl { background-color: #264f78; }
 .chroma .lnt, .chroma .ln { color: #858585; }
