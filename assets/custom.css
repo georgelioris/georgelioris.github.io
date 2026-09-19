@@ -46,6 +46,13 @@ body::before,
   --tw-prose-td-borders: color-mix(in oklab, var(--fg) 15%, transparent);
 }
 
+.prose:not(#\#):not(#\#):not(#\#):not(#\#) hr {
+  height: 2px;
+  border: 0;
+  border-radius: 9999px;
+  background-color: var(--tw-prose-hr);
+}
+
 main section time,
 article > header div {
   opacity: 0.9 !important;
@@ -96,7 +103,8 @@ header > div:first-child > a {
 }
 
 .break-words {
-  font-family: var(--font-serif);
+  font-family: var(--font-mono);
+  white-space: pre-line;
 }
 
 main section h2 {
@@ -112,6 +120,7 @@ main section time {
 }
 
 article {
+  color: var(--fg) !important;
   font-family: var(--font-serif);
   font-size: 1rem !important;
   line-height: 1.75 !important;
@@ -200,7 +209,7 @@ main .rounded-full > img {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
 }
 
 .post-cover-bg:not(#\#):not(#\#):not(#\#):not(#\#) img {
@@ -214,11 +223,11 @@ main .rounded-full > img {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgb(255 255 255 / 30%);
+  background: rgb(255 255 255 / 20%);
 }
 
 .dark .post-cover-bg::after {
-  background: rgb(0 0 0 / 30%);
+  background: rgb(0 0 0 / 20%);
 }
 
 article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .highlight {
@@ -234,7 +243,25 @@ article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) .highlight > div {
   border-radius: 0;
 }
 
+article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) > nav {
+  margin-inline: -2rem;
+  border-radius: 0;
+  font-family: var(--font-sans);
+}
+
+article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) > nav > a:not(.justify-end) {
+  padding-left: 2rem;
+}
+
+article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) > nav > a.justify-end {
+  padding-right: 2rem;
+}
+
 @media (min-width: 744px) {
+  article:not(#\#):not(#\#):not(#\#):not(#\#):not(#\#) > nav {
+    border-radius: 16px;
+  }
+
   .post-cover-bg {
     border-radius: 16px 16px 0 0;
   }
