@@ -1,0 +1,15 @@
+baseURL = 'https://georgelioris.github.io/'
+locale = 'en-us'
+title = 'George Lioris'
+theme = 'paper'
+
+[params]
+  name = 'George Lioris'
+  bio = 'Random thoughts about programming and technology.'
+  avatar = '/avatar.jpg'
+  github = 'georgelioris'
+  disableHLJS = true
+
+[markup.highlight]
+  noClasses = false
+  lineNumbersInTable = false
